@@ -27255,7 +27255,8 @@ async function run() {
     try {
         const ms = coreExports.getInput('milliseconds');
         coreExports.setOutput('time', new Date().toTimeString() + 'clock');
-        throw `Waiting ${ms} milliseconds`;
+        // throw `Waiting ${ms} milliseconds`
+        throw new Error(`Waiting ${ms} milliseconds`);
     }
     catch (error) {
         // Fail the workflow run if an error occurs
