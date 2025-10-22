@@ -27255,19 +27255,19 @@ async function run() {
     try {
         const ms = coreExports.getInput('milliseconds');
         coreExports.setOutput('time', new Date().toTimeString() + 'clock');
-        // throw `Waiting ${ms} milliseconds`
-        throw new Error(`Waiting ${ms} milliseconds`);
+        throw `Waiting ${ms} milliseconds`;
+        // throw new Error(`Waiting ${ms} milliseconds`)
     }
     catch (error) {
         // Fail the workflow run if an error occurs
-        coreExports.debug('Error occurred in action');
+        coreExports.debug('core debug lod in catch block');
         console.log('error caught', error);
         if (error instanceof Error) {
             coreExports.setFailed(error.message);
         }
         else {
             console.error('Non-error thrown occurred in action');
-            coreExports.debug('Non-error thrown occurred in action');
+            coreExports.debug('core debug lod in non-error catch block');
         }
     }
 }
