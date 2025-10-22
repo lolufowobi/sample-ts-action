@@ -27260,14 +27260,14 @@ async function run() {
     }
     catch (error) {
         // Fail the workflow run if an error occurs
-        coreExports.debug('core debug load in catch block');
-        console.log('console logging caught error', error);
+        coreExports.debug('1. core debug load in catch block');
+        console.log('2.console logging caught error=>', error);
         if (error instanceof Error) {
             coreExports.setFailed(error.message);
         }
         else {
-            console.error('console error logging non-error thrown in catch block');
-            coreExports.debug('core debug lod in non-error catch block');
+            console.error('3.console error logging non-error thrown in catch block');
+            coreExports.debug('4.core debug lod in non-error catch block');
         }
     }
 }
