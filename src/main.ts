@@ -14,9 +14,11 @@ export async function run(): Promise<void> {
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.debug('Error occurred in action')
+    console.log('error caught', error)
     if (error instanceof Error) {
       core.setFailed(error.message)
     } else {
+      console.error('Non-error thrown occurred in action')
       core.debug('Non-error thrown occurred in action')
     }
   }
