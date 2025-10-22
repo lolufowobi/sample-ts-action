@@ -17,6 +17,9 @@ export async function run(): Promise<void> {
     core.debug(new Date().toTimeString())
     await wait(parseInt(ms, 10))
     core.debug(new Date().toTimeString())
+    if (ms !== undefined) {
+      throw `Waiting ${ms} milliseconds`
+    }
 
     // Set outputs for other workflow steps to use
     core.setOutput('time', new Date().toTimeString())
