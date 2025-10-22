@@ -22,9 +22,10 @@ export async function run(): Promise<void> {
     }
 
     // Set outputs for other workflow steps to use
-    core.setOutput('time', new Date().toTimeString())
+    core.setOutput('time', new Date().toTimeString() + 'Weston')
   } catch (error) {
     // Fail the workflow run if an error occurs
+    core.debug('Error occurred in action')
     if (error instanceof Error) core.setFailed(error.message)
   }
 }
