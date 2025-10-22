@@ -27260,8 +27260,12 @@ async function run() {
     catch (error) {
         // Fail the workflow run if an error occurs
         coreExports.debug('Error occurred in action');
-        if (error instanceof Error)
+        if (error instanceof Error) {
             coreExports.setFailed(error.message);
+        }
+        else {
+            coreExports.debug('Non-error thrown occurred in action');
+        }
     }
 }
 
