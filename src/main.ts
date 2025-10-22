@@ -14,12 +14,12 @@ export async function run(): Promise<void> {
     // throw new Error(`Waiting ${ms} milliseconds`)
   } catch (error) {
     // Fail the workflow run if an error occurs
-    core.debug('core debug lod in catch block')
-    console.log('error caught', error)
+    core.debug('core debug load in catch block')
+    console.log('console logging caught error', error)
     if (error instanceof Error) {
       core.setFailed(error.message)
     } else {
-      console.error('Non-error thrown occurred in action')
+      console.error('console error logging non-error thrown in catch block')
       core.debug('core debug lod in non-error catch block')
     }
   }
